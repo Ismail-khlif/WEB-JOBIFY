@@ -16,6 +16,7 @@ class PostType extends AbstractType
             ->add('description')
             ->add('date_de_creation')
             ->add('date_expiration')
+            ->add('posteur')
         ;
     }
 

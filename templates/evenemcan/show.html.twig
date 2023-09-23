@@ -1,0 +1,41 @@
+{% extends 'baseC.html.twig' %}
+
+{% block title %}Evenement{% endblock %}
+
+{% block body %}
+    <h1>Evenement</h1>
+
+    <table class="table">
+        <tbody>
+
+        <tr>
+            <th>Titre</th>
+            <td>{{ evenement.titre }}</td>
+        </tr>
+        <tr>
+            <th>Description</th>
+            <td>{{ evenement.description }}</td>
+        </tr>
+        <tr>
+            <th>Date_debut</th>
+            <td>{{ evenement.dateDebut ? evenement.dateDebut|date('Y-m-d H:i:s') : '' }}</td>
+        </tr>
+        <tr>
+            <th>Date_fin</th>
+            <td>{{ evenement.dateFin ? evenement.dateFin|date('Y-m-d H:i:s') : '' }}</td>
+        </tr>
+        <tr>
+            <th>Lieu</th>
+            <td>{{ evenement.lieu }}</td>
+        </tr>
+        <tr>
+            <th>Organisateur</th>
+            <td>{{ evenement.organisateur }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_evenemcan') }}">back to list</a>
+
+
+{% endblock %}

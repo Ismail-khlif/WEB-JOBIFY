@@ -14,6 +14,7 @@ class ReclamationType extends AbstractType
         $builder
             ->add('description')
             ->add('date_de_creation')
+            ->add('nom')
         ;
     }
 

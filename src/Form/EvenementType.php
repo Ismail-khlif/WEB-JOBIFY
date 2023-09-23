@@ -17,6 +17,7 @@ class EvenementType extends AbstractType
             ->add('date_debut')
             ->add('date_fin')
             ->add('lieu')
+            ->add('organisateur')
         ;
     }
 

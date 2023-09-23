@@ -74,5 +74,19 @@ class PostController extends AbstractController
         }
 
         return $this->redirectToRoute('app_post_index', [], Response::HTTP_SEE_OTHER);
+    }/*
+    #[Route('/Candidat', name: 'app_postC_index', methods: ['GET'])]
+    public function indexC(PostRepository $postRepository): Response
+    {
+        return $this->render('post/indexC.html.twig', [
+            'posts' => $postRepository->findAll(),
+        ]);
     }
+    #[Route('Ca/{id}', name: 'app_postC_show', methods: ['GET'])]
+    public function showC(Post $post): Response
+    {
+        return $this->render('post/showC.html.twig', [
+            'post' => $post,
+        ]);
+    }*/
 }

@@ -1,0 +1,41 @@
+{% extends 'baseC.html.twig' %}
+
+{% block title %}Formation{% endblock %}
+
+{% block body %}
+    <h1>Formation</h1>
+
+    <table class="table">
+        <tbody>
+
+        <tr>
+            <th>Titre</th>
+            <td>{{ formation.titre }}</td>
+        </tr>
+        <tr>
+            <th>Description</th>
+            <td>{{ formation.description }}</td>
+        </tr>
+        <tr>
+            <th>Prix</th>
+            <td>{{ formation.prix }}</td>
+        </tr>
+        <tr>
+            <th>Date_debut</th>
+            <td>{{ formation.dateDebut ? formation.dateDebut|date('Y-m-d H:i:s') : '' }}</td>
+        </tr>
+        <tr>
+            <th>Date_fin</th>
+            <td>{{ formation.dateFin ? formation.dateFin|date('Y-m-d H:i:s') : '' }}</td>
+        </tr>
+        <tr>
+            <th>Formateur</th>
+            <td>{{ formation.formateur }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_formationC_index') }}">back to list</a>
+
+
+{% endblock %}

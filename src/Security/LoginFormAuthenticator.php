@@ -100,21 +100,39 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
 
 
         $user = $token->getUser();
-
+/*
         if(in_array('admin',$user->getRoles(),true)) {
             return new RedirectResponse($this->urlGenerator->generate('app_user_index'));
         }
         if(in_array('entrepreneur',$user->getRoles(),true)) {
             return new RedirectResponse($this->urlGenerator->generate('frontentrepreneur'));
         }
-        if(in_array('candidate',$user->getRoles(),true)) {
+        if(in_array('Candidate',$user->getRoles(),true)) {
+            return new RedirectResponse($this->urlGenerator->generate('frontcandidate'));
+
+        }*/
+        if(($user->getEmail()=='ismail@admin.tn')&& ($user->getMdp()=='$2y$13$Fgh60Q.D5ShpHSYyZEDyuOo8CeGGScpqUwY1vjeWESwsT08.iuZ9i') )
+        {
+            // For example : return new RedirectResponse($this->urlGenerator->generate('some_route'));
+            return new RedirectResponse($this->urlGenerator->generate('app_user_index'));
+        }
+
+
+        if($user->getRole()=='Entrepreneur')
+    {
+        return new RedirectResponse($this->urlGenerator->generate('frontentrepreneur'));
+    }
+        if($user->getRole()=='Candidat')
+        {
             return new RedirectResponse($this->urlGenerator->generate('frontcandidate'));
         }
 
 
-
+        if(($user->getEmail()=='ismail@admin.tn')&& ($user->getPassword()=='aaa') )
+        {
         // For example : return new RedirectResponse($this->urlGenerator->generate('some_route'));
         return new RedirectResponse($this->urlGenerator->generate('app_user_index'));
+        }
     }
 
     protected function getLoginUrl(): string

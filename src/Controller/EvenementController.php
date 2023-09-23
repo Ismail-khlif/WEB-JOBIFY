@@ -75,4 +75,19 @@ class EvenementController extends AbstractController
 
         return $this->redirectToRoute('app_evenement_index', [], Response::HTTP_SEE_OTHER);
     }
+    /*
+    #[Route('/Candidat', name: 'app_evenementC_index', methods: ['GET'])]
+    public function indexC(EvenementRepository $evenementRepository): Response
+    {
+        return $this->render('evenement/indexC.html.twig', [
+            'evenements' => $evenementRepository->findAll(),
+        ]);
+    }
+    #[Route('Ca/{id}', name: 'app_evenementC_show', methods: ['GET'])]
+    public function showC(Evenement $evenement): Response
+    {
+        return $this->render('evenement/showC.html.twig', [
+            'evenement' => $evenement,
+        ]);
+    }*/
 }

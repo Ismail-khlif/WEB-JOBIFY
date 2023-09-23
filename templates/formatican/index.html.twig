@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'baseC.html.twig' %}
 
 {% block title %}Formation {% endblock %}
 
@@ -7,16 +7,16 @@
 
     <table class="table">
         <thead>
-            <tr>
+        <tr>
 
-                <th>Titre</th>
-                <th>Description</th>
-                <th>Prix</th>
-                <th>Date_debut</th>
-                <th>Date_fin</th>
-                <th>Formateur</th>
-                <th>actions</th>
-            </tr>
+            <th>Titre</th>
+            <th>Description</th>
+            <th>Prix</th>
+            <th>Date_debut</th>
+            <th>Date_fin</th>
+            <th>Formateur</th>
+            <th>actions</th>
+        </tr>
         </thead>
         <tbody>
         {% for formation in formations %}
@@ -29,8 +29,8 @@
                 <td>{{ formation.dateFin ? formation.dateFin|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ formation.formateur }}</td>
                 <td>
-                    <a href="{{ path('app_formation_show', {'id': formation.id}) }}">show</a>
-                    <a href="{{ path('app_formation_edit', {'id': formation.id}) }}">edit</a>
+                    <a href="{{ path('app_formatican_show', {'id': formation.id}) }}">show</a>
+
                 </td>
             </tr>
         {% else %}
@@ -41,5 +41,4 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_formation_new') }}">Create new</a>
 {% endblock %}

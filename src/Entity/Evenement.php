@@ -29,6 +29,9 @@ class Evenement
     #[ORM\Column(length: 255)]
     private ?string $lieu = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $organisateur = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -90,6 +93,18 @@ class Evenement
     public function setLieu(string $lieu): self
     {
         $this->lieu = $lieu;
+
+        return $this;
+    }
+
+    public function getOrganisateur(): ?string
+    {
+        return $this->organisateur;
+    }
+
+    public function setOrganisateur(string $organisateur): self
+    {
+        $this->organisateur = $organisateur;
 
         return $this;
     }

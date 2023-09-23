@@ -7,10 +7,7 @@
 
     <table class="table">
         <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ post.id }}</td>
-            </tr>
+
             <tr>
                 <th>Titre</th>
                 <td>{{ post.titre }}</td>
@@ -26,6 +23,10 @@
             <tr>
                 <th>Date_expiration</th>
                 <td>{{ post.dateExpiration ? post.dateExpiration|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Posteur</th>
+                <td>{{ post.posteur }}</td>
             </tr>
         </tbody>
     </table>

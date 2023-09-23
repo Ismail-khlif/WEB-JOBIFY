@@ -17,6 +17,7 @@ class FormationType extends AbstractType
             ->add('prix')
             ->add('date_debut')
             ->add('date_fin')
+            ->add('formateur')
         ;
     }
 

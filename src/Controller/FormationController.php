@@ -75,4 +75,19 @@ class FormationController extends AbstractController
 
         return $this->redirectToRoute('app_formation_index', [], Response::HTTP_SEE_OTHER);
     }
+    /*
+    #[Route('/Candidat', name: 'app_formationC_index', methods: ['GET'])]
+    public function indexC(FormationRepository $formationRepository): Response
+    {
+        return $this->render('formation/indexC.html.twig', [
+            'formations' => $formationRepository->findAll(),
+        ]);
+    }
+    #[Route('Ca/{id}', name: 'app_formationC_show', methods: ['GET'])]
+    public function showC(Formation $formation): Response
+    {
+        return $this->render('formation/showC.html.twig', [
+            'formation' => $formation,
+        ]);
+    }*/
 }

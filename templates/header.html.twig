@@ -20,8 +20,6 @@
 
         <nav class="s-header__nav-wrap">
 
-            <h2 class="s-header__nav-heading h6">Site Navigation</h2>
-
             <ul class="s-header__nav">
                 <li class="current"><a href="index.html" title="">Home</a></li>
                 <li class="has-children">
@@ -46,16 +44,22 @@
                         <li><a href="single-standard.html">Standard Post</a></li>
                     </ul>
                 </li>
-                <li><a href="styles.html" title="">Styles</a></li>
-                <li><a href="about.html" title="">About</a></li>
-                <li><a href="contact.html" title="">Contact</a></li>
                 {% if app.user %}
+                <li><a href="{{ path('app_post_index') }}" title="">Post</a></li>
+                <li><a href="{{ path('app_formation_index') }}" title="">Formation</a></li>
+                <li><a href="{{ path('app_evenement_index') }}" title="">Evenement</a></li>
+                    <li><a href="{{ path('app_reclamation_index') }}" title="">Reclamation</a></li>
                     <li> <a href="{{ path('app_logout') }}">Logout</a></li>
                 {% else %}
+                    <li><a href="styles.html" title="">Styles</a></li>
+                    <li><a href="about.html" title="">About</a></li>
+                    <li><a href="contact.html" title="">Contact</a></li>
                     <li> <a href="{{ path('registration') }}">Registration</a></li>
                     <li> <a href="{{ path('app_login') }}">Login</a></li>
                 {% endif %}
             </ul> <!-- end header__nav -->
+
+            <h2 class="s-header__nav-heading h6">Site Navigation</h2>
 
             <a href="#0" title="Close Menu" class="s-header__overlay-close close-mobile-menu">Close</a>
 

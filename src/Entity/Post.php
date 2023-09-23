@@ -32,6 +32,9 @@ class Post
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $date_expiration = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $posteur = null;
+
 
     public function getId(): ?int
     {
@@ -82,6 +85,18 @@ class Post
     public function setDateExpiration(\DateTimeInterface $date_expiration): self
     {
         $this->date_expiration = $date_expiration;
+
+        return $this;
+    }
+
+    public function getPosteur(): ?string
+    {
+        return $this->posteur;
+    }
+
+    public function setPosteur(string $posteur): self
+    {
+        $this->posteur = $posteur;
 
         return $this;
     }

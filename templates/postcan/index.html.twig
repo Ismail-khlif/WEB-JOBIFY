@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'baseC.html.twig' %}
 
 {% block title %}Post {% endblock %}
 
@@ -7,15 +7,15 @@
 
     <table class="table">
         <thead>
-            <tr>
+        <tr>
 
-                <th>Titre</th>
-                <th>Description</th>
-                <th>Date_de_creation</th>
-                <th>Date_expiration</th>
-                <th>Posteur</th>
-                <th>actions</th>
-            </tr>
+            <th>Titre</th>
+            <th>Description</th>
+            <th>Date_de_creation</th>
+            <th>Date_expiration</th>
+            <th>Posteur</th>
+            <th>actions</th>
+        </tr>
         </thead>
         <tbody>
         {% for post in posts %}
@@ -27,8 +27,8 @@
                 <td>{{ post.dateExpiration ? post.dateExpiration|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ post.posteur }}</td>
                 <td>
-                    <a href="{{ path('app_post_show', {'id': post.id}) }}">show</a>
-                    <a href="{{ path('app_post_edit', {'id': post.id}) }}">edit</a>
+                    <a href="{{ path('app_postcan_show', {'id': post.id}) }}">show</a>
+
                 </td>
             </tr>
         {% else %}
@@ -39,5 +39,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_post_new') }}">Create new</a>
+
 {% endblock %}

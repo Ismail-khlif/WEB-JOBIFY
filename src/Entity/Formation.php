@@ -29,6 +29,9 @@ class Formation
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $date_fin = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $formateur = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -90,6 +93,18 @@ class Formation
     public function setDateFin(\DateTimeInterface $date_fin): self
     {
         $this->date_fin = $date_fin;
+
+        return $this;
+    }
+
+    public function getFormateur(): ?string
+    {
+        return $this->formateur;
+    }
+
+    public function setFormateur(string $formateur): self
+    {
+        $this->formateur = $formateur;
 
         return $this;
     }
